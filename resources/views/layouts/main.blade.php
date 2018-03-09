@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head >
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +31,7 @@
     <div id="wrapper" >
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color:#3366ff;">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -39,16 +39,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" style="color:black;" href="index.html">ระะบบกรอกข้อมูลออนไลน์</a>
             </div>
             <!-- /.navbar-header -->
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
+            <div class="navbar-default sidebar" role="navigation" >
+                <div class="sidebar-nav navbar-collapse"  >
+                    <ul class="nav" id="side-menu"  >
+                        <li class="sidebar-search"  style="background-color:#3366ff;">
+                            <div class="input-group custom-search-form" >
+                                <input type="text" class="form-control" placeholder="ค้นหา...">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="button">
                                         <i class="fa fa-search"></i>
@@ -73,10 +73,10 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="/form_login"><i class="fa fa-table fa-fw"></i> เข้าสู่ระบบ</a>
+                            <a href="/form_login"><i class="fa fa-file-text"></i> เข้าสู่ระบบ</a>
                         </li>
                         <li>
-                            <a href="/form_register"><i class="fa fa-table fa-fw"></i> สมัครสมาชิก</a>
+                            <a href="/form_register"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
                         </li>
                     </ul>
                 </div>

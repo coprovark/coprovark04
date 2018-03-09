@@ -1,8 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
+<div class="container" style="font-size : 15px">
             <form>
-            <h1>สมัครสมาชิก</h1>
+            <center><h1>สมัครสมาชิก</h1></center>
                     <div class="form-group">
                          <label for="name">ชื่อ-สกุล</label>
                             <div class="form-inline" style="width:100%">
@@ -10,40 +11,43 @@
                                               <option>นาย</option>
                                               <option>นาง</option>
                                               <option>นางสาว</option>
-                                          </select>
-                                          <input type="text" class="form-control" placeholder="ชื่อ-สกุล" name="name" style="width:90%">
-                                        </div>
+                                </select>
+                                        <input type="text" class="form-control" placeholder="ชื่อ" name="name" style="width:30%">
+                                        <input type="text" class="form-control" placeholder="นามสกุล" name="name" style="width:30%">
                                       </div>
+                                   </div>
                            
                             <div class="form-group">
                               <label>เพศ</label><br>
-                              <input type="radio"  name="radio" value="ชาย"> ชาย<br>
+                              <input type="radio"  name="radio" value="ชาย"> ชาย
                               <input type="radio" name="radio" value="หญิง"> หญิง<br>
                             </div>
                             
                             <div class="form-group">
                               <label>เบอร์โทรศัพท์</label>
-                              <input type="number" class="form-control" id="exampleInputPassword1" placeholder="ใส่เบอร์โทร">
+                              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="ใส่เบอร์โทร" style="width :70%">
                             </div>
 
                             <div class="form-group">
                             <label>ที่อยู่</label>
                             <br>
-                            <textarea name="area" class="form-control" style="height:200px" placeholder="ใส่ที่อยู่"></textarea>
+                            <textarea name="area" class="form-control" style="width :70%;height:350px;" placeholder="ใส่ที่อยู่" ></textarea>
                             </div>
-
+                            <br>
                             <div class="form-group">
                                     <label>E-mail</label>
-                                    <input type="text" class="form-control"placeholder="ใส่ E-mail">
+                                    <input type="text" class="form-control"placeholder="ใส่ E-mail" style="width :70%">
                             </div>
+                            <br>
                             <div class="form-group">
                             <label>สิ่งทีชอบ</label>
                             <br>
-                                <input type="checkbox" name="checkbox" value="โสด">การ์ตูน<br>
-                                <input type="checkbox" name="checkbox" value="มีแฟนแล้ว">เล่นเกม<br>
-                                <input type="checkbox" name="checkbox" value="มีแฟนแล้ว">อ่านหนังสือ<br>
+                                <input type="checkbox" name="checkbox" value="โสด">การ์ตูน &nbsp;
+                                <input type="checkbox" name="checkbox" value="มีแฟนแล้ว">เล่นเกม &nbsp;
+                                <input type="checkbox" name="checkbox" value="มีแฟนแล้ว">อ่านหนังสือ &nbsp;
                                 <input type="checkbox" name="checkbox" value="มีแฟนแล้ว">เล่นกีฬา <br>
                             </div>
+                            <br>
                             <div class="form-group">
                             <label>จังหวัด</label>
                             <select  class="form-control" name="select" style="width:200px">
@@ -133,26 +137,22 @@
 
                             <div class="form-group">
                                     <label>User</label>
-                                    <input type="text" class="form-control"placeholder="ใส่ User">
+                                    <input type="text" class="form-control"placeholder="ใส่ User" style="width :70%">
                             </div>
                             <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" class="form-control"placeholder="ใส่ Password">
+                                    <input type="password" class="form-control"placeholder="ใส่ Password" style="width :70%">
                             </div>
                             <div class="form-group">
                                     <label>Re-Password</label>
-                                    <input type="password" class="form-control"placeholder="ใส่ Re-Password">
-                            </div>
-                            <div class="checkbox">
-                              <label>
-                                <input type="checkbox"> Check me out
-                              </label>
+                                    <input type="password" class="form-control"placeholder="ใส่ Re-Password" style="width :70%">
                             </div>
                             <center>
                             <button type="submit" class="btn btn-primary">บันทึก</button>
-                            <button type="button" class="btn btn-danger">ล้างหน้า</button>
+                            <a type="button" href="/form_register" class="btn btn-danger">ยกเลิก</a>
                             </center>
                             <br>
             </form>
+            </div>
 
 @endsection

@@ -50,6 +50,7 @@ Route::get('/page4', function () {
 
 Route::post('/page','PageController@show');
 Route::post('/page','PageController@show2');
+Route::post('/page','PageController@show3');
 
 
 
@@ -65,5 +66,10 @@ Route::get('/form_register', function () {
 });
 
 Route::get('/form_login', function () {
-    return view('page.form_login');
+    $array = [
+        "USERNAME" => "",
+        "PASS"   => ""
+
+    ];
+    return view('page.form_login', $array);
 });
