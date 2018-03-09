@@ -149,7 +149,7 @@
                             </div>
                             <center>
                             <button type="submit" class="btn btn-primary">บันทึก</button>
-                            <a type="button" href="/form_register" class="btn btn-danger">ยกเลิก</a>
+                            <a type="button" href="/form_register" class="btn btn-danger">ยกเลิก</a>                      
                             </center>
                             <br>
             </form>
