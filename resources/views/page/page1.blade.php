@@ -24,6 +24,10 @@
     <br>
     <br>
     <input type="submit" value="ส่งค่า">
+    <br>
+    <br>
+    รหัสผ่าน
+    <input type="password" name="password" value=""
     </form>
     <br>
     <h1>แสดงข้อมูล</h1>

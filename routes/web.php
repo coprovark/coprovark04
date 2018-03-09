@@ -34,7 +34,14 @@ Route::get('/page2', function () {
 });
 
 Route::get('/page3', function () {
-    return view('page.page3');
+    $array1 = [
+        "NAM" => "",
+        "PASS" => "",
+        "SELEC"  => "",
+        "AREA" => ""
+
+    ];
+    return view('page.page3',$array1);
 });
 
 Route::get('/page4', function () {
@@ -42,6 +49,7 @@ Route::get('/page4', function () {
 });
 
 Route::post('/page','PageController@show');
+Route::post('/page','PageController@show2');
 
 
 
@@ -50,4 +58,12 @@ Route::get('/page10/{id}', function ($id) {
         "ID" => $id
     ];
     return view('page.page10',$array);
+});
+
+Route::get('/form_register', function () {
+    return view('page.form_register');
+});
+
+Route::get('/form_login', function () {
+    return view('page.form_login');
 });

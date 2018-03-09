@@ -29,5 +29,23 @@ class PageController extends Controller //extends สืบทอดคุณส
      
        return view('page.page1',$array);
     }
+
+    public function show2(Request $request)
+    {
+        $txt_name = $request->input('name');
+        $txt_pass = $request->input('password');
+        $txt_select = $request->input('select');
+        $txt_area = $request->input('area');
+
+
+        $array1=[
+        "NAM"  => $txt_name,
+        "PASS"  => $txt_pass,
+        "SELEC" => $txt_select,
+        "AREA"  => $txt_area
+
+];
+return view('page.page3',$array1);
+    }
     
 }
