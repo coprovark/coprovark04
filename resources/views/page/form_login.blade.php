@@ -26,11 +26,14 @@
                 SHOW : PASSWORD : {{ $PASS }}    
 <h1>
     <?php
-    if($USERNAME&&$PASS != 'Null')
-        if($USERNAME=='sarawut'){
-            if($PASS=='1234')
-        echo "True"; }
-            else echo "False"
+    if($USERNAME&&$PASS!='Null'){ 
+        if($USERNAME=='sarawut' && $PASS=='1234'){
+            echo "TRUE";
+                        }else{
+                              echo "FALSE";
+                             }
+    }
+   
     ?>
 </h1>
 

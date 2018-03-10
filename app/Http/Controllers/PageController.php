@@ -53,10 +53,10 @@ return view('page.page3',$array1);
         $txt_username = $request->input('user');
         $txt_password = $request->input('pass');
 
-        $array2=[ "USERNAME" => $txt_username,
+        $data=[ "USERNAME" => $txt_username,
                  "PASS" => $txt_password
         ];
-       return view('page.form_login',$array2);
+       return view('page.form_login',$data);
     }
     
 }

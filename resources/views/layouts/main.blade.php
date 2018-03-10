@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" style="color:black;" href="index.html">ระะบบกรอกข้อมูลออนไลน์</a>
+                <a class="navbar-brand" style="color:black;" href="/main">ระะบบกรอกข้อมูลออนไลน์</a>
             </div>
             <!-- /.navbar-header -->
 

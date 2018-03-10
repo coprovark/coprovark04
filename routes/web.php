@@ -66,10 +66,14 @@ Route::get('/form_register', function () {
 });
 
 Route::get('/form_login', function () {
-    $array = [
+    $data = [
         "USERNAME" => "",
         "PASS"   => ""
 
     ];
-    return view('page.form_login', $array);
+    return view('page.form_login', $data);
+});
+
+Route::get('/main', function () {
+    return view('layouts.main');
 });
