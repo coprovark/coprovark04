@@ -25,6 +25,16 @@
 
 
 </head>
+<style>
+table, th, td {
+		color : black ;  
+		border: 1px solid black;
+		border-collapse: collapse;
+		padding: 8px 20px;
+		background-color: white;
+		
+	}
+</style>
 
 <body>
 
@@ -73,10 +83,13 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="/form_login"><i class="fa fa-file-text"></i> เข้าสู่ระบบ</a>
+                            <a href="/form_login2"><i class="fa fa-file-text"></i> เข้าสู่ระบบ</a>
                         </li>
                         <li>
                             <a href="/form_register"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
+                        </li>
+                        <li>
+                            <a href="/list_users"><i class="fa fa-dedent"></i> สมาชิก</a>
                         </li>
                     </ul>
                 </div>

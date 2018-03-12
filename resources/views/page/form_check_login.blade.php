@@ -1,7 +1,8 @@
-@extends('layouts.main')
+<!-- Route :     form_check_login -->
+<!-- Controller : form_check_login -->
+<!-- View :      form_check_login.blade.php  -->
 
-@section('content')
-        <form action="/form_login2" method="post" style="font-size : 15px">
+<form action="/form_check_login" method="post" style="font-size : 15px">
            <center> <h1>เข้าสู่ระบบ</h1>
             <div class="form-group">
                                 <label>User</label>
@@ -20,7 +21,11 @@
 
 <hr>
 
-<h1>username = {{ $username }}</h1>
-<h1>id = {{ $name }}</h1>
+@foreach ($users as $user) 
+    USER : {{ $user->username }}<br><br>
+    PASSWORD : {{ $user->password }}<br><br>
+    ID : {{ $user->id }}
+  
+     
 
-@endsection
+@endforeach

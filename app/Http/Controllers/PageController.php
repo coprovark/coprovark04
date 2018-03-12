@@ -3,14 +3,14 @@
 namespace App\Http\Controllers; //บอกตำแหน่ง
 
 use App\Page; //use ดึงสคิป ต่างๆ
-
 use Illuminate\Http\Request;
-
 use App\Http\Controllers\Controller;
+
+use Illuminate\Support\Facades\DB;//ใช้ในการเชื่อมฐานข้อมูล
 
 class PageController extends Controller //extends สืบทอดคุณสมบัติ
 {
-    public function show(Request $request)
+    public function show1(Request $request)
     {
         $txt_name = $request->input('name');
         $txt_hidden = $request->input('hidden');
@@ -58,5 +58,44 @@ return view('page.page3',$array1);
         ];
        return view('page.form_login',$data);
     }
+
+    public function form_check_login(Request $req)
+    {
+        
+        $users = DB::select('select * from users where username = ? and password = ?' , 
+                             [$req['username'],$req['password']]
+                           );
     
+                           return View('page.form_check_login',['users'=>$users]);
+    }
+
+
+    public function form_login(Request $req)
+    {    
+        $txt_username = $req->input('username');
+        $txt_password = $req->input('password');
+        $users = DB::select('select * from users where username = ? and password = ?' , 
+        [$req['username'],$req['password']]);   
+        foreach($users as $value){
+            if($txt_username == $value->username && $txt_password == $value->password){
+               // $data['status'] = "true";
+            }
+        }
+            return View('page.form_login',['users'=>$users]);
+    }
+    
+   // form_login2=================================================//
+   public function form_login2(Request $req){
+    $users = DB::table('users')->where([
+        ['username','=',$req['username']],
+        ['password','=',$req['password']]
+    ])->get();
+        $name = '';
+    foreach($users as $value){
+        $name = $value['id'];
+        }
+        $req ['name'] = $name;
+    return view('page.form_login',$req);
+   }
+   //--------------------------------------------------------//
 }
