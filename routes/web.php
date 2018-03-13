@@ -65,6 +65,10 @@ Route::get('/form_register', function () {
     return view('page.form_register');
 });
 
+Route::get('/form_register2', function () {
+    return view('page.form_register2');
+});
+
 Route::get('/form_login', function () {
     $data = [
         "USERNAME" => "",
@@ -112,4 +116,13 @@ Route::post('/form_login2','PageController@form_login2');//จะทำงาน
 //     return view('page.list_user');
 // });
 Route::get('/list_users','UsersController@list_users');
+Route::post('/list_users_find','UsersController@list_users_find');
+//=================DELETE===============================================//
+Route::get('delete_user/{id}', function ($id) {
+    return 'User'.$id;
+});
+Route::get('/delete_user/{id}','UsersController@delete_users');
 //================================================================//
+Route::post('/form_register2','UsersController@form_register2');
+//================================================================//
+

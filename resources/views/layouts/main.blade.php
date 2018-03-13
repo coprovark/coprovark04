@@ -28,7 +28,7 @@
 <style>
 table, th, td {
 		color : black ;  
-		border: 1px solid black;
+		border: 1px solid #cecece;;
 		border-collapse: collapse;
 		padding: 8px 20px;
 		background-color: white;
@@ -87,6 +87,9 @@ table, th, td {
                         </li>
                         <li>
                             <a href="/form_register"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
+                        </li>
+                        <li>
+                            <a href="/form_register2"><i class="fa fa-paste"></i> สมัครสมาชิกtest</a>
                         </li>
                         <li>
                             <a href="/list_users"><i class="fa fa-dedent"></i> สมาชิก</a>
