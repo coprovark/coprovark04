@@ -5,7 +5,7 @@
             <form>
             <center><h1>สมัครสมาชิก</h1></center>
                     <div class="form-group">
-                         <label for="name">ชื่อ-สกุล</label>
+                         <label>ชื่อ-สกุล</label>
                             <div class="form-inline" style="width:100%">
                                 <select class="form-control" style="width:9%">
                                               <option>นาย</option>

@@ -86,16 +86,34 @@ return view('page.page3',$array1);
     
    // form_login2=================================================//
    public function form_login2(Request $req){
-    $users = DB::table('users')->where([
+    $users = DB::table('coprovark_04')->where([
         ['username','=',$req['username']],
         ['password','=',$req['password']]
     ])->get();
-        $name = '';
-    foreach($users as $value){
-        $name = $value['id'];
+        $status = "Username หรือ Password ไม่ถูกต้องค่ะ...";
+    foreach($users as $result){
+        $status = $result="Login สำเร็จค่ะ...";
         }
-        $req ['name'] = $name;
+            $req ['name'] = $status;
     return view('page.form_login',$req);
    }
    //--------------------------------------------------------//
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+}//endCLASS
