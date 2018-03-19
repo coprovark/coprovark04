@@ -62,18 +62,18 @@ table, th, td {
             <div class="navbar-default sidebar" role="navigation" >
                 <div class="sidebar-nav navbar-collapse"  >
                     <ul class="nav" id="side-menu"  >
-                        <li>
-                            <a href="/form_loginSTD"><i class="fa fa-home"></i> หนักแรก</a>
-                        </li>
-                        <li>
-                            <a href="/form_loginSTD"><i class="fa fa-file-text"></i> เข้าสู่ระบบ</a>
-                        </li>
-                        <li>
-                            <a href="/form_registerSTD"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
-                        </li>
-                        <li>
-                            <a href="/list_users"><i class="fa fa-dedent"></i> สมาชิก</a>
-                        </li>
+                            <li>
+                                <a href="/form_loginSTD"><i class="fa fa-home"></i> หนักแรก</a>
+                            </li>
+                            <li>
+                                <a href="/form_loginSTD"><i class="fa fa-file-text"></i> เข้าสู่ระบบ</a>
+                            </li>
+                            <li>
+                                <a href="/form_registerSTD"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
+                            </li>
+                            <li>
+                                <a href="/list_users"><i class="fa fa-dedent"></i> สมาชิก</a>
+                            </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -89,7 +89,7 @@ table, th, td {
                         <br>
 
                     @yield('content')    
-                              
+
                 </div>
                 <!-- /.row -->
                 </div>

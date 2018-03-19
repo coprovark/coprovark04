@@ -33,7 +33,6 @@ class UsersController extends Controller
         ]);      
     }
 
-
 //delete
     public function delete_users($id)
     {

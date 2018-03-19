@@ -37,7 +37,6 @@ class PageController extends Controller //extends สืบทอดคุณส
         $txt_select = $request->input('select');
         $txt_area = $request->input('area');
 
-
         $array1=[
         "NAM"  => $txt_name,
         "PASS"  => $txt_pass,

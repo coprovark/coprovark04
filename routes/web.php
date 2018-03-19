@@ -52,8 +52,6 @@ Route::post('/page','PageController@show');
 Route::post('/page','PageController@show2');
 Route::post('/page','PageController@show3');
 
-
-
 Route::get('/page10/{id}', function ($id) {
     $array = [
         "ID" => $id
