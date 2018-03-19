@@ -1,8 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-        <form action="/form_loginSTD
-        " method="post" style="font-size : 15px">
+        <form action="/form_loginSTD" method="post" style="font-size : 15px">
            <center> <h1>เข้าสู่ระบบ</h1>
             <div class="form-group">
                                 <label>Username</label>

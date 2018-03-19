@@ -5,12 +5,7 @@
 </div>
 <div class="container-fluid" style="border:1px solid black;border-radius: 0px 0px 15px 15px;"> 
 <div class="container" style="font-size : 15px;padding:30px 30px 30px 30px"> 
-        <form action="/form_registerSTD" method="post">
-
-        <!-- <div class="form-group">
-                <label>ID</label>
-                <input type="text" class="form-control" placeholder="ใส่ id" name="id" style="width:70%">
-        </div>   -->
+<form action="/form_registerSTD" method="post">
 
         <div class="container">
         <div class="row">
