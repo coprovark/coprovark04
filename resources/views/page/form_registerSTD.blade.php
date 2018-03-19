@@ -5,7 +5,7 @@
 </div>
 <div class="container-fluid" style="border:1px solid black;border-radius: 0px 0px 15px 15px;"> 
 <div class="container" style="font-size : 15px;padding:30px 30px 30px 30px"> 
-        <form action="/form_register2" method="post">
+        <form action="/form_registerSTD" method="post">
 
         <!-- <div class="form-group">
                 <label>ID</label>
@@ -184,7 +184,7 @@
         <hr>
         <center>
                 <button type="submit" class="btn btn-primary">บันทึก</button>
-                 <a type="button" href="/form_register2" class="btn btn-danger">ยกเลิก</a>                      
+                 <a type="button" href="/form_registerSTD" class="btn btn-danger">ยกเลิก</a>                      
         </center>            
 </form>
 </div>

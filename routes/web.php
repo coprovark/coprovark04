@@ -65,8 +65,8 @@ Route::get('/form_register', function () {
     return view('page.form_register');
 });
 
-Route::get('/form_register2', function () {
-    return view('page.form_register2');
+Route::get('/form_registerSTD', function () {
+    return view('page.form_registerSTD');
 });
 
 Route::get('/form_login', function () {
@@ -101,14 +101,14 @@ Route::get('/form_login', function () {
 Route::post('/form_login','PageController@form_login');
 //================================================================//
 
-Route::get('/form_login2', function () {
+Route::get('/form_loginSTD', function () {
     $data = ['username' => '',
             'name' => ''
 ];
     return view('page.form_login',$data);
 });
 
-Route::post('/form_login2','PageController@form_login2');//จะทำงานก็่อเมื่อเรากดปุ่ม submit
+Route::post('/form_loginSTD','PageController@form_loginSTD');//จะทำงานก็่อเมื่อเรากดปุ่ม submit
 
 //================================================================//
 
@@ -123,6 +123,6 @@ Route::get('delete_user/{id}', function ($id) {
 });
 Route::get('/delete_user/{id}','UsersController@delete_users');
 //================================================================//
-Route::post('/form_register2','UsersController@form_register2');
+Route::post('/form_registerSTD','UsersController@form_registerSTD');
 //================================================================//
 

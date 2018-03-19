@@ -84,8 +84,8 @@ return view('page.page3',$array1);
             return View('page.form_login',['users'=>$users]);
     }
     
-   // form_login2=================================================//
-   public function form_login2(Request $req){
+   // form_loginSTD=================================================//
+   public function form_loginSTD(Request $req){
     $users = DB::table('coprovark_04')->where([
         ['username','=',$req['username']],
         ['password','=',$req['password']]

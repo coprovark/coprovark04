@@ -55,7 +55,7 @@ table, th, td {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <b><a class="navbar-brand" style="color:black;font-size:25px;" href="/form_login2">ระะบบกรอกข้อมูลนักศึกษาออนไลน์</a></b>
+                <b><a class="navbar-brand" style="color:black;font-size:25px;" href="/form_loginSTD">ระะบบกรอกข้อมูลนักศึกษาออนไลน์</a></b>
             </div>
             <!-- /.navbar-header -->
 
@@ -89,16 +89,16 @@ table, th, td {
                             <!-- /.nav-second-level -->
                         <!-- </li> -->
                         <li>
-                            <a href="/form_login2"><i class="fa fa-home"></i> หนักแรก</a>
+                            <a href="/form_loginSTD"><i class="fa fa-home"></i> หนักแรก</a>
                         </li>
                         <li>
-                            <a href="/form_login2"><i class="fa fa-file-text"></i> เข้าสู่ระบบ</a>
+                            <a href="/form_loginSTD"><i class="fa fa-file-text"></i> เข้าสู่ระบบ</a>
                         </li>
                         <!-- <li>
                             <a href="/form_register"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
                         </li> -->
                         <li>
-                            <a href="/form_register2"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
+                            <a href="/form_registerSTD"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
                         </li>
                         <li>
                             <a href="/list_users"><i class="fa fa-dedent"></i> สมาชิก</a>

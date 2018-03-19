@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 { 
+//show
     public function list_users()
     {
         $find = '';
@@ -17,6 +18,8 @@ class UsersController extends Controller
         ]);
 
     }
+
+//search    
     public function list_users_find(Request $req)
     {
         $find = $req->find;
@@ -31,7 +34,7 @@ class UsersController extends Controller
     }
 
 
-
+//delete
     public function delete_users($id)
     {
         DB::table('coprovark_04')->where('id', '=', $id)->delete();
@@ -39,7 +42,7 @@ class UsersController extends Controller
     }
     
 //insert
-    public function form_register2(Request $req){
+    public function form_registerSTD(Request $req){
         //  if('food1' == '') { $food1=0 ;}else echo  $food1=1;
         $status = DB::table('coprovark_04')->insert(
           [      
