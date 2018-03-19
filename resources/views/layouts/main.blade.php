@@ -62,41 +62,12 @@ table, th, td {
             <div class="navbar-default sidebar" role="navigation" >
                 <div class="sidebar-nav navbar-collapse"  >
                     <ul class="nav" id="side-menu"  >
-                        <!-- <li class="sidebar-search"  style="background-color:#3366ff;">
-                            <div class="input-group custom-search-form" >
-                                <input type="text" class="form-control" placeholder="ค้นหา...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                            <!/input-group -->
-                        <!-- </li>
-                        <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li> --> 
-                        <!-- <li> -->
-                            <!-- <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a> -->
-                            <!-- <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul> -->
-                            <!-- /.nav-second-level -->
-                        <!-- </li> -->
                         <li>
                             <a href="/form_loginSTD"><i class="fa fa-home"></i> หนักแรก</a>
                         </li>
                         <li>
                             <a href="/form_loginSTD"><i class="fa fa-file-text"></i> เข้าสู่ระบบ</a>
                         </li>
-                        <!-- <li>
-                            <a href="/form_register"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
-                        </li> -->
                         <li>
                             <a href="/form_registerSTD"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
                         </li>
@@ -117,20 +88,8 @@ table, th, td {
                     <div class="col-lg-12">
                         <br>
 
-                        <!-- <h1 class="page-header">กรอกข้อมูล</h1> -->
-                        
-
-                    
-
-                    @yield('content')
-
-
-
-
-                        
-                    
-                 
-                    <!-- /.col-lg-12 -->                    
+                    @yield('content')    
+                              
                 </div>
                 <!-- /.row -->
                 </div>

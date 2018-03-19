@@ -43,7 +43,6 @@ class UsersController extends Controller
     
 //insert
     public function form_registerSTD(Request $req){
-        //  if('food1' == '') { $food1=0 ;}else echo  $food1=1;
         $status = DB::table('coprovark_04')->insert(
           [      
             'sid'       => $req->sid,

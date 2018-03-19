@@ -68,8 +68,6 @@ return view('page.page3',$array1);
     
                            return View('page.form_check_login',['users'=>$users]);
     }
-
-
     public function form_login(Request $req)
     {    
         $txt_username = $req->input('username');
@@ -83,7 +81,6 @@ return view('page.page3',$array1);
         }
             return View('page.form_login',['users'=>$users]);
     }
-    
    // form_loginSTD=================================================//
    public function form_loginSTD(Request $req){
     $users = DB::table('coprovark_04')->where([
