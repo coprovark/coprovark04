@@ -11,17 +11,20 @@
 
     <title>webapp</title>
 
+
+
+
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap/css/bootstrap.min.css') }}">
 
     <!-- MetisMenu CSS -->
-    <link href="css/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/metisMenu/metisMenu.min.css') }}">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/sb-admin-2.css') }}">
 
     <!-- Custom Fonts -->
-    <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome/css/font-awesome.min.css') }}">
 
     <!-- Gid -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -40,6 +43,17 @@ table, th, td {
 		padding: 8px 20px;
 		background-color: white;	
 	}
+footer{
+    margin-bottom : 10 px;
+    position : fixed;
+    letf : 0;
+    bottom : 0;
+    width : 100%;
+
+}
+/* .container{
+    border : 1px solid black;
+} */
 </style>
 
 <body style="font-family: 'Kanit', sans-serif;">
@@ -63,11 +77,68 @@ table, th, td {
                 <div class="sidebar-nav navbar-collapse"  >
                     <ul class="nav" id="side-menu"  >
                             <li>
-                                <a href="/form_loginSTD"><i class="fa fa-home"></i> หนักแรก</a>
-                            </li>
-                            <li>
                                 <a href="/form_loginSTD"><i class="fa fa-file-text"></i> เข้าสู่ระบบ</a>
                             </li>
+                            <li>
+                            <!-- <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> ข้อมูลพื้นฐาน<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/co_main_show">co_main</a>
+                                </li>
+                                <li>
+                                    <a href="/co_blood_show">co_blood</a>
+                                </li>  
+                                <li>
+                                    <a href="/co_branch_show">co_branch</a>
+                                </li>
+                                <li>
+                                    <a href="/co_citizenship_show">co_citizenship</a>
+                                </li>  
+                                <li>
+                                    <a href="/show_faculty">co_faculty</a>
+                                </li>
+                                <li>
+                                    <a href="/co_gender_show">co_gender</a>
+                                </li>  
+                                <li>
+                                    <a href="/co_institution_show">co_institution</a>
+                                </li>
+                                <li>
+                                    <a href="/co_level_show">co_level</a>
+                                </li>  
+                                <li>
+                                    <a href="/co_nationality_show">co_nationality</a>
+                                </li>
+                                <li>
+                                    <a href="/co_religion_show">co_religion</a>
+                                </li>                              
+                                <li>
+                                    <a href="/co_status_show">co_status</a>
+                                </li>
+                                <li>
+                                    <a href="/co_style_show">co_style</a>
+                                </li>  
+                                <li>
+                                    <a href="/co_titlename_show">co_titlename</a>
+                                </li>
+                                <li>
+                                    <a href="/co_tpyestudent_show">co_tpyestudent</a>
+                                </li>  
+                                <li>
+                                    <a href="/co_typeuser_show">co_typeuser</a>
+                                </li>
+                                <li>
+                                    <a href="/co_user_show">co_user</a>
+                                </li>  
+                            </ul>                      -->
+                            </li>
+                            <li>
+                                <a href="/co_register"><i class="fa fa-paste"></i> ใบสมัครงาน</a>
+                            </li>
+                            <li>
+                                <a href="/show_register"><i class="fa fa-dedent"></i> ราชื่อผู้สมัคงาน</a>
+                            </li>
+                            
                             <li>
                                 <a href="/form_registerSTD"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
                             </li>

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-        <div class="container-fluid" style="font-size:20px;background-color:yellow;border:1px solid black;border-radius: 15px 15px 0px 0px;">
+        <div class="container-fluid" style="font-size:20px;background-color:#ffff66;border:1px solid black;border-radius: 15px 15px 0px 0px;">
                 <b class="fa fa-paste"> || สมัครสมาชิก</b>
         </div>
         <div class="container-fluid" style="border:1px solid black;border-radius: 0px 0px 15px 15px;"> 

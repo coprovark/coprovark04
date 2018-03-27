@@ -23,8 +23,8 @@
     <table style="width:100%;margin-top:20px;">
 			  <tr>
 			  	<th width="3%"; style="background-color:#3366ff;text-align:center;">ลำดับ</th>
-				<th width="10%"; style="background-color:#3366ff;text-align:center;">รหัสนักศึกษา</th>
-				<th width="30%"; style="background-color:#3366ff;text-align:center;">ชื่อ-นามสกุล</th> 
+				<th width="10%"; style="background-color:#3366ff;text-align:center;">password</th>
+				<th width="30%"; style="background-color:#3366ff;text-align:center;">Username</th> 
 				<th width="10%"; style="background-color:#3366ff;text-align:center;">วันเกิด</th>
                 <th width="20%"; style="background-color:#3366ff;text-align:center;">สังกัดคณะ</th>
                 <th width="20%"; style="background-color:#3366ff;text-align:center;">ดำเนินการ</th>
@@ -43,8 +43,8 @@
 				<?php if($item -> facultyID == 1)$facultyID="วิทยาการคอมพิวเตอร์";?>
 				<td>{{ $facultyID }}</td>
                 <td style="text-align:center;">
-                    <button type="button" class="fa fa-close" style="padding:5px 10px;border-radius: 5px;background-color:red;" onclick="return _confirm('{{ $item->id }}')">
-                    <button type="button" class="fa fa-edit" style="padding:5px 10px;border-radius: 5px;background-color:#00b359;" href="/form_register" class="btn btn-warning">แก้ไข</button>
+                    <button type="button" class="fa fa-close" style="padding:5px 10px;border-radius: 5px;background-color:red;" onclick="return _confirm('{{ $item->id }}')"></button>
+                    <a href="/list_user_edit/{{$item->id}}" class="fa fa-edit" style="padding:5px 10px;border-radius: 5px;background-color:#00b359;">แก้ไข</a>
                 </td>
 			  @endforeach
 	</table>
