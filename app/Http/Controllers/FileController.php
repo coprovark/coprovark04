@@ -251,7 +251,6 @@ public function deleteItem(Request $req){
         'show' => $select,
     ]);
 }
-
 //showFilefull
 public function show_File(Request $req){
     $select = DB :: table('picture')->select('*')->get();
@@ -396,6 +395,16 @@ public function download(Request $req){
     {
         return response()->download('C:/xampp/htdocs/webapp/upload00/public/'.$row->Gallery_name.'/'.$row->picture_Path);
     }    
+}
+public function view_picture(Request $req){
+    $id = $req->picture_id;
+    $query = DB::table('picture')
+    ->select('*')
+    ->where('picture_id','=',$id)
+    ->get();
+    return view('page.view_picture',[
+        'list' => $query,
+    ]);  
 }
 
 

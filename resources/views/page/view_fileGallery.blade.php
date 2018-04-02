@@ -37,6 +37,7 @@
             <td>{{$show->picture_UpdateDate}}</td>
             <td>
             <center>
+                <a href="/view_picture/{{$show->picture_id}}" class="btn btn-info"  target="new">ดูรูป</a>
                 <a href="/edit_file/{{$show->picture_id}}" class="btn btn-warning" >แก้ไข</a>
                 <a href="/deletefile/{{$show->picture_id}}" class="btn btn-danger" >ลบ</a>
                 <a href="/download/{{$show->picture_id}}" class="btn btn-default" target="new">Download</a> <!---target="new" แทบใหม่ๆๆๆๆ-->
