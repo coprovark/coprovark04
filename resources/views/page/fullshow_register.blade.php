@@ -46,11 +46,7 @@
                         <center>
                         <div class="col-md-3" >
                                 <div class="form-group"style="float:right;margin-top:10%;width :120px;height:150px ;border:1px solid black">
-                                <br>
-                                ขนาดรูปถ่าย
-                                <br>
-                                <br>
-                               size 1.5 นิ้ว
+                                <img src="{{ asset('picture/'.$item->pic_path) }}" width="115px" height="145px">
                                 </div>
                         </div>
                         </center>
@@ -75,7 +71,7 @@
                         </td>
 	</table>
 	<table class="table" style="margin-bottom: 0px;">
-			<td class="col-sm-2"><b>รหัสนักศึกษา</b></td>
+			<td class="col-sm-2"><b>รหัสนักศึกษา/อ้างอิง</b></td>
 			<td class="col-sm-3"> <u>{{ $item -> co_studencode }}</u></td>
 			<td class="col-sm-3"><b>เลขที่บัตรประจำตัวประชาชน</b></td>
 			<td class="col-sm-4"> <u>{{ $item -> co_idcard }}</u></td>

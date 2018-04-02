@@ -25,6 +25,7 @@
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome/css/font-awesome.min.css') }}">
+    
 
     <!-- Gid -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -80,9 +81,9 @@ footer{
                                 <a href="/form_loginSTD"><i class="fa fa-file-text"></i> เข้าสู่ระบบ</a>
                             </li>
                             <li>
-                            <!-- <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> ข้อมูลพื้นฐาน<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> ข้อมูล Gallery<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
+                                <!-- <li>
                                     <a href="/co_main_show">co_main</a>
                                 </li>
                                 <li>
@@ -129,8 +130,18 @@ footer{
                                 </li>
                                 <li>
                                     <a href="/co_user_show">co_user</a>
-                                </li>  
-                            </ul>                      -->
+                                </li>   -->
+                            
+                            <li>
+                                    <a href="/Gallery"><i class="fa fa-paste"></i> สร้างGallery</a>
+                                </li>
+                                <li>
+                                    <a href="/show_Gallery"><i class="fa fa-paste"></i> แสดงGallery</a>
+                                </li>
+                                <li>
+                                    <a href="/show_File"><i class="fa fa-paste"></i> แสดงไฟล์ทั้งหมดใน Gallery</a>
+                            </li>
+                            </ul>                      
                             </li>
                             <li>
                                 <a href="/co_register"><i class="fa fa-paste"></i> ใบสมัครงาน</a>
@@ -139,11 +150,11 @@ footer{
                                 <a href="/show_register"><i class="fa fa-dedent"></i> ราชื่อผู้สมัคงาน</a>
                             </li>
                             
-                            <li>
+                            <!-- <li>
                                 <a href="/form_registerSTD"><i class="fa fa-paste"></i> สมัครสมาชิก</a>
                             </li>
                             <li>
-                                <a href="/list_users"><i class="fa fa-dedent"></i> สมาชิก</a>
+                                <a href="/list_users"><i class="fa fa-dedent"></i> สมาชิก</a> -->
                             </li>
                     </ul>
                 </div>
@@ -172,16 +183,16 @@ footer{
 
     </div>
     <!-- /#wrapper -->
-<footer class="bs-docs-footer" style="background-color:#111111; margin:0px 0px 0px 0px; color: white;">
+<!-- <footer class="bs-docs-footer" style="background-color:#111111; margin:0px 0px 0px 0px; color: white;">
 	<div class="container" style="text-align: center;">		
-	    <p class="float-right" style="margin-top:5px;">
+	    <p class="float-right" style="margin-top:5px;"> -->
 			<!-- <a title="go to top" href="#"><img  src="image2/topto.png"  width="35" height="35"></a> -->
-        </p> 	
+        <!-- </p> 	
         <marquee  class="Red12Bold" style="padding:0px 0px 0px 0px;">
         Copyright © 2018 StudentFORM.co, LTD. ALL RIGHTS RESERVED.
         </marquee>	
 	</div>
-</footer>
+</footer> -->
     <!-- jQuery -->
     <script src="js/jquery/jquery.min.js"></script>
 
@@ -195,6 +206,26 @@ footer{
     <script src="js/sb-admin-2.js"></script>
 
     <!-- date -->
+    <script>//โชว์รูปตอน input
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                if(input.files[0].type == 'image/jpeg' || input.files[0].type == 'image/png' ){
+                    $('#view').attr('src', e.target.result);
+                }else{
+                    alert('รูปแบบไฟล์ไม่ถูกต้อง');
+                    $('#pathphoto').val('');
+                    $('#view').attr('src', 'images/icon_blank.png');               
+                }
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#pathphoto").change(function() {
+        readURL(this);
+    });
+</script>
     <script language="javascript">
     function calAge(o)
     {
@@ -204,6 +235,15 @@ footer{
         document.getElementById("age").value = current_year - tmp[0];
     }       
     </script>
+    <!-- ลบข้อมูลในฐาน -->
+    <script>
+		function _confirm(co_id){
+			if(confirm ('ยืนยันการลบ')){
+				window.location.href = 'deleteCo_register/'+co_id;
+			}
+		}
+		
+	</script>
 
 
 </body>

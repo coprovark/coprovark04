@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\DB;//ใช้ในการเชื่อม�
 
 class PageController extends Controller //extends สืบทอดคุณสมบัติ
 {
-    public function show1(Request $request)
-    {
+    public function show1(Request $request){
         $txt_name = $request->input('name');
         $txt_hidden = $request->input('hidden');
         $txt_radio = $request->input('radio');
@@ -30,8 +29,7 @@ class PageController extends Controller //extends สืบทอดคุณส
        return view('page.page1',$array);
     }
 
-    public function show2(Request $request)
-    {
+    public function show2(Request $request){
         $txt_name = $request->input('name');
         $txt_pass = $request->input('password');
         $txt_select = $request->input('select');
@@ -43,8 +41,8 @@ class PageController extends Controller //extends สืบทอดคุณส
         "SELEC" => $txt_select,
         "AREA"  => $txt_area
 
-];
-return view('page.page3',$array1);
+    ];
+    return view('page.page3',$array1);
     }
 
     public function show3(Request $request)

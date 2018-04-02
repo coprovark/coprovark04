@@ -13,13 +13,12 @@
                         </div>
                         </div>
                         <br>
-                        <input type="hidden" name="id" value="{{$item -> co_id}}">
-
-                                <label>เลขที่ NO.</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input type="text" class="form-control" style="width:61%;" placeholder="่ใส่ลำดับ" name="co_no" value="{{$item -> co_id}}" >
+                                <label>เลขที่ NO.</label>
+                                <input type="hidden" name="id" value="{{$item -> co_id}}">
+                                <input type="text" class="form-control" style="margin:5%;width:61%;" placeholder="่ใส่ลำดับ"  value="{{$item -> co_id}}" readonly >
                                 <div class="form-group form-inline">
-                                <label>วันที่กรอกข้อมูล</label>
-                                <input class="form-control form-control-sm" style="margin-top:5px;width:61%;" type="Date" name="co_date" value="{{$item -> co_date}}" >
+                                <label>วันที่ปรับปรุง</label>
+                                <input class="form-control form-control-sm" style="margin-top:5px;width:60%;" type="text" name="co_date" value="{{date("Y/m/d")}}" readonly >
                         </div>
                         <br><br>
                         </div>
@@ -77,7 +76,7 @@
 <div class="container">
                 <div class="row">
                         <div class="col-md-2" style="">
-                                <label>รหัสนักศึกษาอ้างอิง</label>
+                                <label>รหัสนักศึกษา/อ้างอิง</label>
                         </div>
                         <div class="col-md-4" style="">
                                 <div class="form-group">
@@ -143,7 +142,9 @@
                         <div class="col-md-4" style="">
                                 <div class="form-group">
                                 <select class="form-control" style="width:115%" name="co_faculty">
-                                <option  <?php if($item -> co_faculty==1)$co_faculty="selected";else  $co_faculty="" ?> {{$co_faculty}} value="1">คณะวิทยาการคอมพิวเตอร์</option>
+                                @foreach($faculty as $list)
+                                <option <?php if($list -> faculty_code == $item -> co_faculty) echo "selected"?> value="{{$list -> faculty_code}}"> {{$list -> faculty_name}}</option>
+                                @endforeach
                                 </select>
                                 </div>
                         </div>
@@ -158,12 +159,9 @@
                         <div class="col-md-1" style="">
                                 <div class="form-group">
                                 <select class="form-control" style="width:100%" name="co_level">
-                                <option <?php if($item -> co_level==1)$level1="selected";else  $level1="" ?> {{$level1}} value="1">ปี 1</option>
-                                <option <?php if($item -> co_level==2)$level2="selected";else  $level2="" ?> {{$level2}} value="2">ปี 2</option>
-                                <option <?php if($item -> co_level==3)$level3="selected";else  $level3="" ?> {{$level3}} value="3">ปี 3</option>
-                                <option <?php if($item -> co_level==4)$level4="selected";else  $level4="" ?> {{$level4}} value="4">ปี 4</option>
-                                <option <?php if($item -> co_level==5)$level5="selected";else  $level5="" ?> {{$level5}} value="5">ปี 5</option>
-                                <option <?php if($item -> co_level==6)$level6="selected";else  $level6="" ?> {{$level6}} value="6">ปี 6</option>
+                                @foreach($level as $list)
+                                <option <?php if($list -> level_code == $item -> co_level) echo "selected"?> value="{{$list -> level_code}}"> {{$list -> level_name}}</option>
+                                @endforeach
                                 </select>  
                                 </div>
                         </div>
@@ -181,7 +179,9 @@
                         <div class="col-md-3" style="">
                                 <div class="form-group">
                                 <select class="form-control" style="width:100%" name="co_institution">
-                                <option <?php if($item -> co_institution==1)$co_institution="selected";else  $co_institution="" ?> {{$co_institution}} value="1">มหาวิทยาลัยราชภัฏอุบลราชธานี</option>
+                                @foreach($institution as $list)
+                                <option <?php if($list -> institution_code == $item -> co_institution) echo "selected"?> value="{{$list -> institution_code}}"> {{$list -> institution_name}}</option>
+                                @endforeach
                                 </select> 
                                 </div>
                         </div>
@@ -194,10 +194,10 @@
                                 <label>ประเภทนักศึกษา</label>
                         </div>
                         <div class="col-md-4" style="" >
-                                <div class="form-group">
-                                <input name="co_tpyestudent" type="radio" <?php if($item -> co_tpyestudent == 1) $tpyestudent1="checked";else $tpyestudent1=""; ?> {{$tpyestudent1}}  value="1" > ปกติ &emsp;
-                                <input name="co_tpyestudent" type="radio" <?php if($item -> co_tpyestudent == 2) $tpyestudent2="checked";else $tpyestudent2=""; ?> {{$tpyestudent2}}  value="2" > กศ.บป. &emsp;
-                                <input name="co_tpyestudent" type="radio" <?php if($item -> co_tpyestudent == 3) $tpyestudent3="checked";else $tpyestudent3=""; ?> {{$tpyestudent3}}  value="3" > กศ.อศ. &emsp;
+                                <div class="form-group">                                
+                                @foreach($tpyestudent as $list)    
+                                <input type="radio" name="co_tpyestudent"  <?php if($list -> tpyestudent_code == $item -> co_tpyestudent) echo "checked" ?> value="{{$list -> tpyestudent_code}}" > {{$list -> tpyestudent_name}} &emsp;
+                                @endforeach
                                 </div>
                         </div>
                         <div class="col-md-2" style="">
@@ -205,11 +205,10 @@
                         </div>
                         <div class="col-md-3" style="">
                                 <div class="form-group">
-                                <input type="radio" name="co_style" <?php if($item -> co_style == 1) $style1="checked";else $style1=""; ?> {{$style1}} value="1" > V&emsp;
-                                <input type="radio" name="co_style" <?php if($item -> co_style == 2) $style2="checked";else $style2=""; ?> {{$style2}} value="2" > A&emsp;
-                                <input type="radio" name="co_style" <?php if($item -> co_style == 3) $style3="checked";else $style3=""; ?> {{$style3}} value="3" > R&emsp;
-                                <input type="radio" name="co_style" <?php if($item -> co_style == 4) $style4="checked";else $style4=""; ?> {{$style4}} value="4" > K&emsp;
-                                <input type="radio" name="co_style" <?php if($item -> co_style == 5) $style5="checked";else $style5=""; ?> {{$style5}} value="5" > Model&emsp;
+                                @foreach($style as $list)    
+                                <input type="radio" name="co_style"  <?php if($list -> style_name == $item -> co_style) echo "checked" ?> value="{{$list -> style_name}}"> {{$list -> style_name}}&emsp;
+                                @endforeach
+   
                                 </div>
                         </div>
                 </div>
@@ -238,8 +237,9 @@
                         </div>
                         <div class="col-md-3" style="">
                                 <div class="form-group">
-                                <input type="radio" name="co_gender" <?php if($item -> co_gender == 1) $gender1="checked";else $gender1=""; ?> {{$gender1}} value="1"> ชาย &emsp;
-                                <input type="radio" name="co_gender" <?php if($item -> co_gender == 2) $gender2="checked";else $gender2=""; ?> {{$gender2}} value="2"> หญิง &emsp;
+                                @foreach($gender as $list)    
+                                <input type="radio" name="co_gender"  <?php if($list -> gender_code == $item -> co_gender) echo "checked" ?> value="{{$list -> gender_code}}"> {{$list -> gender_name}}&emsp;
+                                @endforeach
                                 </div>
                         </div>
                 </div>
@@ -268,10 +268,9 @@
                         </div>
                         <div class="col-md-3" style="">
                                 <div class="form-group">
-                                <input type="radio" name="co_blood" <?php if($item -> co_blood == 'A') $blood1="checked";else $blood1=""; ?> {{$blood1}} value="A" > A&emsp;
-                                <input type="radio" name="co_blood" <?php if($item -> co_blood == 'B') $blood2="checked";else $blood2=""; ?> {{$blood2}} value="B" > B&emsp;
-                                <input type="radio" name="co_blood" <?php if($item -> co_blood == 'O') $blood3="checked";else $blood3=""; ?> {{$blood3}} value="O" > O&emsp;
-                                <input type="radio" name="co_blood" <?php if($item -> co_blood == 'AB') $blood4="checked";else $blood4=""; ?> {{$blood4}} value="AB" > AB&emsp;
+                                @foreach($blood as $list)    
+                                <input type="radio" name="co_blood"  <?php if($list -> blood_name == $item -> co_blood) echo "checked" ?> value="{{$list -> blood_name}}"> {{$list -> blood_name}}&emsp;
+                                @endforeach
                                 </div>
                         </div>
                 </div>
@@ -284,10 +283,9 @@
                         </div>
                         <div class="col-md-4" style="">
                                 <div class="form-group">
-                                <input type="radio" name="co_status" <?php if($item -> co_status == 1) $status1="checked";else $status1=""; ?> {{$status1}} value="1" > โสด &emsp;
-                                <input type="radio" name="co_status" <?php if($item -> co_status == 2) $status2="checked";else $status2=""; ?> {{$status2}} value="2" > แต่งงาน &emsp;
-                                <input type="radio" name="co_status" <?php if($item -> co_status == 3) $status3="checked";else $status3=""; ?> {{$status3}} value="3" > หม้าย &emsp;
-                                <input type="radio" name="co_status" <?php if($item -> co_status == 4) $status4="checked";else $status4=""; ?> {{$status4}} value="4" > อย่าร้าง &emsp;
+                                @foreach($status as $list)    
+                                <input type="radio" name="co_status"  <?php if($list -> status_code == $item -> co_status) echo "checked" ?> value="{{$list -> status_code}}"> {{$list -> status_name}}&emsp;
+                                @endforeach
                                 </div>
                         </div>
                         <div class="col-md-2" style="">
@@ -295,7 +293,11 @@
                         </div>
                         <div class="col-md-3" style="">
                                 <div class="form-group">
-                                <input type="text" name="co_nationality" class="form-control" id="exampleInputPassword1" placeholder="สัญชาติ" value="{{$item -> co_nationality}}" style="width :100%"  >
+                                <select class="form-control" style="width:100%" name="co_nationality">
+                                @foreach($nationality as $list)
+                                <option <?php if($list -> nationality_code == $item -> co_nationality) echo "selected"?> value="{{$list -> nationality_code}}"> {{$list -> nationality_name}}</option>
+                                @endforeach
+                                </select>
                                 </div>
                         </div>
                 </div>
@@ -308,7 +310,11 @@
                         </div>
                         <div class="col-md-4" style="">
                                 <div class="form-group">
-                                <input type="text" name="co_citizenship" class="form-control" id="exampleInputPassword1" placeholder="เชื้อชาติ" value="{{$item -> co_citizenship}}" style="width :100%" >
+                                <select class="form-control" style="width:100%" name="co_citizenship">
+                                @foreach($citizenship as $list)
+                                <option <?php if($list -> citizenship_code == $item -> co_citizenship) echo "selected"?> value="{{$list -> citizenship_code}}"> {{$list -> citizenship_name}}</option>
+                                @endforeach
+                                </select>
                                 </div>
                         </div>
                         <div class="col-md-2" style="">
@@ -316,7 +322,11 @@
                         </div>
                         <div class="col-md-3" style="">
                                 <div class="form-group">
-                                <input type="text" name="co_religion" class="form-control" id="exampleInputPassword1" placeholder="ศาสนา" value="{{$item -> co_religion}}" style="width :100%" >
+                                <select class="form-control" style="width:100%" name="co_religion">
+                                @foreach($religion as $list)
+                                <option <?php if($list -> religion_code == $item -> co_religion) echo "selected"?> value="{{$list -> religion_code}}"> {{$list -> religion_name}}</option>
+                                @endforeach
+                                </select>
                                 </div>
                         </div>
                 </div>

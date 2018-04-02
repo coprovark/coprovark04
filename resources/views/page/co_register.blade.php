@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
-        <form class="form-group form-inline" action="/co_register" method="post">
+        <form class="form-group form-inline" action="/co_insert" method="post" enctype="multipart/form-data">
 
         <div class="container" style="border:1px solid black;background-color:white;">
                         <div class="row">             
@@ -12,11 +12,11 @@
                                 </div>
                                 </div>
                                 <br>
-                                        <label>เลขที่ NO.</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="text" class="form-control" style="width:61%;" placeholder="่ใส่ลำดับ" name="co_no" >
+                                        <br>
+                                        <br>
                                         <div class="form-group form-inline">
                                         <label>วันที่กรอกข้อมูล</label>
-                                        <input class="form-control form-control-sm" style="margin-top:5px;width:61%;" type="Date" name="co_date">
+                                        <input class="form-control form-control-sm" style="margin-top:5px;width:61%;" type="text" name="co_date" value="{{date("Y/m/d")}}" readonly>
                                 </div>
                                 <br><br>
                                 </div>
@@ -35,12 +35,12 @@
                                 </center>  
                                 <center>
                                 <div class="col-md-3" >
-                                        <div class="form-group"style="float:right;margin-top:10%;width :120px;height:150px ;border:1px solid black">
+                                        <div class="form-group"style="float:right;margin:10% 20% 0% 0%;width :120px;height:150px ;">
                                         <br>
-                                        ขนาดรูปถ่าย
-                                        <br>
-                                        <br>
-                                       size 1.5 นิ้ว
+                                    
+                                                <input type="file" name="PICTURE" ></input><br>
+                                   
+                                       
                                         </div>
                                 </div>
                                 </center>
@@ -62,9 +62,9 @@
                                 </div>
                                 <div class="col-md-10" style="">
                                         <div class="form-group">
-                                        <input type="radio" name="co_typeuser" value="1" > นักเรียน &emsp;
-                                        <input type="radio" name="co_typeuser" value="2" > นักศึกษา &emsp;
-                                        <input type="radio" name="co_typeuser" value="3" > ครู/อาจารย์ &emsp;
+                                        @foreach($typeuser as $list)    
+                                        <input type="radio" name="co_typeuser" value="{{$list -> typeuser_code}}"> {{$list -> typeuser_name}}&emsp;
+                                        @endforeach
                                         </div>
                                 </div>
                         </div>
@@ -73,7 +73,7 @@
         <div class="container">
                         <div class="row">
                                 <div class="col-md-2" style="">
-                                        <label>รหัสนักศึกษาอ้างอิง</label>
+                                        <label>รหัสนักศึกษา/อ้างอิง</label>
                                 </div>
                                 <div class="col-md-4" style="">
                                         <div class="form-group">
@@ -100,9 +100,9 @@
                                 <div class="col-md-4" style="">   
                                 <div class="form-group form-inline">
                                         <select class="form-control" style="width:31%" name="co_titlename">
-                                        <option value="1">นาย</option>
-                                        <option value="2">นาง</option>
-                                        <option value="3">นางสาว</option>       
+                                @foreach($titlename as $list)
+                                <option value="{{$list -> title_code}}">{{$list -> title_name}}</option>
+                                @endforeach
                                         <input type="text" class="form-control" style="width:68%;margin-left:1px;" placeholder="ชื่อ-สกุล" name="co_fullname" >
                                         </select>
                                 </div>        
@@ -126,10 +126,9 @@
                                 <div class="col-md-4" style="">
                                         <div class="form-group">
                                         <select class="form-control" style="width:87%" name="co_branch">
-                                        <option value="1">สาขาวิทยาการคอมพิวเตอร์</option>
-                                        <option value="2">สาขาวิศวกรรมซอร์ฟแวร์</option>
-                                        <option value="3">สาขาเทคโนโลยีมัลติมีเดียและแอนิเมชัน</option>
-                                        <option value="4">สาขาเทคโนโลยีสารสนเทศ</option>
+                                        @foreach($branch as $list)
+                                        <option value="{{$list -> branch_code}}"> {{$list -> branch_name}}</option>
+                                        @endforeach
                                         </select>   
                                         </div>
                                 </div>
@@ -138,8 +137,10 @@
                                 </div>
                                 <div class="col-md-4" style="">
                                         <div class="form-group">
-                                        <select class="form-control" style="width:115%" name="co_faculty">
-                                        <option value="1">คณะวิทยาการคอมพิวเตอร์</option>
+                                        <select class="form-control" style="width:100%" name="co_faculty">
+                                        @foreach($faculty as $list)
+                                        <option value="{{$list -> faculty_code}}"> {{$list -> faculty_name}}</option>
+                                        @endforeach
                                         </select>
                                         </div>
                                 </div>
@@ -154,12 +155,9 @@
                                 <div class="col-md-1" style="">
                                         <div class="form-group">
                                         <select class="form-control" style="width:100%" name="co_level">
-                                        <option value="1">ปี 1</option>
-                                        <option value="2">ปี 2</option>
-                                        <option value="3">ปี 3</option>
-                                        <option value="4">ปี 4</option>
-                                        <option value="5">ปี 5</option>
-                                        <option value="6">ปี 6</option>
+                                        @foreach($level as $list)
+                                        <option value="{{$list -> level_code}}"> {{$list -> level_name}}</option>
+                                        @endforeach
                                         </select>  
                                         </div>
                                 </div>
@@ -176,8 +174,10 @@
                                 </div>
                                 <div class="col-md-3" style="">
                                         <div class="form-group">
-                                        <select class="form-control" style="width:100%" name="co_institution">
-                                        <option value="1">มหาวิทยาลัยราชภัฏอุบลราชธานี</option>
+                                        <select class="form-control" style="width:115%" name="co_institution">
+                                        @foreach($institution as $list)
+                                        <option value="{{$list -> institution_code}}"> {{$list -> institution_name}}</option>
+                                        @endforeach
                                         </select> 
                                         </div>
                                 </div>
@@ -191,9 +191,9 @@
                                 </div>
                                 <div class="col-md-4" style="" >
                                         <div class="form-group">
-                                        <input name="co_tpyestudent" type="radio"  value="1" > ปกติ &emsp;
-                                        <input name="co_tpyestudent" type="radio"  value="2" > กศ.บป. &emsp;
-                                        <input name="co_tpyestudent" type="radio"  value="3" > กศ.อศ. &emsp;
+                                        @foreach($tpyestudent as $list)    
+                                        <input  type="radio" name="co_tpyestudent" value="{{$list -> tpyestudent_code}}" > {{$list -> tpyestudent_name}} &emsp;
+                                        @endforeach
                                         </div>
                                 </div>
                                 <div class="col-md-2" style="">
@@ -201,11 +201,9 @@
                                 </div>
                                 <div class="col-md-3" style="">
                                         <div class="form-group">
-                                        <input type="checkbox" name="co_style" value="V"> V&emsp;
-                                        <input type="checkbox" name="co_style" value="A"> A&emsp;
-                                        <input type="checkbox" name="co_style" value="R"> R&emsp;
-                                        <input type="checkbox" name="co_style" value="K"> K&emsp;
-                                        <input type="checkbox" name="co_style" value="Model"> Model&emsp;
+                                        @foreach($style as $list)    
+                                        <input type="radio" name="co_style" value="{{$list -> style_name}}"> {{$list -> style_name}}&emsp;
+                                        @endforeach
                                         </div>
                                 </div>
                         </div>
@@ -234,8 +232,9 @@
                                 </div>
                                 <div class="col-md-3" style="">
                                         <div class="form-group">
-                                        <input type="radio" name="co_gender" value="1" > ชาย &emsp;
-                                        <input type="radio" name="co_gender" value="2" > หญิง &emsp;
+                                        @foreach($gender as $list)    
+                                        <input type="radio" name="co_gender" value="{{$list -> gender_code}}"> {{$list -> gender_name}}&emsp;
+                                        @endforeach
                                         </div>
                                 </div>
                         </div>
@@ -264,10 +263,9 @@
                                 </div>
                                 <div class="col-md-3" style="">
                                         <div class="form-group">
-                                        <input type="radio" name="co_blood" value="A" > A&emsp;
-                                        <input type="radio" name="co_blood" value="B" > B&emsp;
-                                        <input type="radio" name="co_blood" value="O" > O&emsp;
-                                        <input type="radio" name="co_blood" value="AB" > AB&emsp;
+                                        @foreach($blood as $list)    
+                                        <input type="radio" name="co_blood" value="{{$list -> blood_name}}"> {{$list -> blood_name}}&emsp;
+                                        @endforeach
                                         </div>
                                 </div>
                         </div>
@@ -280,10 +278,9 @@
                                 </div>
                                 <div class="col-md-4" style="">
                                         <div class="form-group">
-                                        <input type="radio" name="co_status" value="1" > โสด &emsp;
-                                        <input type="radio" name="co_status" value="2" > แต่งงาน &emsp;
-                                        <input type="radio" name="co_status" value="3" > หม้าย &emsp;
-                                        <input type="radio" name="co_status" value="4" > อย่าร้าง &emsp;
+                                        @foreach($status as $list)    
+                                        <input type="radio" name="co_status" value="{{$list -> status_code}}"> {{$list -> status_name}}&emsp;
+                                        @endforeach
                                         </div>
                                 </div>
                                 <div class="col-md-2" style="">
@@ -292,10 +289,9 @@
                                 <div class="col-md-3" style="">
                                         <div class="form-group">
                                         <select class="form-control" style="width:220%" name="co_citizenship">
-                                        <option value="1">ไทย</option>
-                                        <option value="2">ลาว</option>
-                                        <option value="3">กัมพูชา</option>
-                                        <option value="4">พม่า</option>
+                                        @foreach($nationality as $list)
+                                        <option value="{{$list -> nationality_code}}"> {{$list -> nationality_name}}</option>
+                                        @endforeach
                                         </select> 
                                         </div>
                                 </div>
@@ -310,10 +306,9 @@
                                 <div class="col-md-4" style="">
                                         <div class="form-group">
                                         <select class="form-control" style="width:220%" name="co_nationality">
-                                        <option value="1">ไทย</option>
-                                        <option value="2">ลาว</option>
-                                        <option value="3">กัมพูชา</option>
-                                        <option value="4">พม่า</option>
+                                        @foreach($citizenship as $list)
+                                        <option value="{{$list -> citizenship_code}}"> {{$list -> citizenship_name}}</option>
+                                        @endforeach
                                         </select>
                                         </div>
                                 </div>
@@ -323,10 +318,9 @@
                                 <div class="col-md-3" style="">
                                         <div class="form-group">
                                         <select class="form-control" style="width:220%" name="co_religion">
-                                        <option value="1">พุทธ</option>
-                                        <option value="2">คริสต์</option>
-                                        <option value="3">อิสลาม</option>
-                                        <option value="4">ฮินดู</option>
+                                        @foreach($religion as $list)
+                                        <option value="{{$list -> religion_code}}"> {{$list -> religion_name}}</option>
+                                        @endforeach
                                         </select>
                                         </div>
                                 </div>

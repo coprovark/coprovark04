@@ -8,7 +8,7 @@
 			<button type="button"  class="btn btn-primary">เพิ่มข้อมูล</button>
 		</a>
 		<button class="form-control"  style="float:right;" type="submit"><i class="fa fa-search"></i></button>
-  		<input class="form-control" name="find" style="float:right;width:300px" value="{{ $find }}" type="text" placeholder="ค้าหา..." name="search2">	
+  		<input class="form-control" name="find" style="float:right;width:300px" value="{{ $find }}" type="text" placeholder="ค้าหารหัสนักศึกษา/อ้างอิง" name="search2">	
 	</div>
 
 
@@ -37,10 +37,10 @@
 				<td>{{ $id++ }}</td>
 				<td>{{ $item -> typeuser_name }}</td>
                                 <td>{{ $item -> co_studencode }}</td>
-                                <td>{{ $item -> title_name }} {{ $item -> co_fullname }}</td>
+                                <td>{{ $item -> co_fullname }}</td>
                                 <td>{{ $item -> co_nickname }}</td>
 				<td>{{ $item -> gender_name }}</td>
-                                <td>{{ $item -> faculty_name }} </td>
+                                <td>{{ $item -> faculty_name }}</td>
 				<td>{{ $item -> institution_name }}</td>
 	
                                 <td style="text-align:center;">
