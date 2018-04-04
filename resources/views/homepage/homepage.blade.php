@@ -211,7 +211,7 @@ footer{
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                if(input.files[0].type == 'image/jpeg' || input.files[0].type == 'image/png' || input.files[0].type == 'image/gif' ){
+                if(input.files[0].type == 'image/jpeg' || input.files[0].type == 'image/png' ){
                     $('#view').attr('src', e.target.result);
                 }else{
                     alert('รูปแบบไฟล์ไม่ถูกต้อง');
@@ -242,7 +242,10 @@ footer{
 				window.location.href = 'deleteCo_register/'+co_id;
 			}
 		}
+		
 	</script>
 
+
 </body>
+
 </html>

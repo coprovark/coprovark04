@@ -99,7 +99,8 @@ class FileController extends Controller{
         }
     }
 //GALLERY=========================================================//
-//insertGallery BUG ชื่อซ้ำกัน
+//insertGallery BUG ชื่อซ้ำกัน error 
+//ชือ Gallery ต้องเป็นภาษาอังกฤษ
 public function insertGallery(Request $req){
         $file = $req->input('Gallery_name');
         mkdir("C:/xampp/htdocs/webapp/upload00/public/$file");  
@@ -128,25 +129,29 @@ public function showGallery(Request $req){
 }
 //ลบGallery
 public function deleteGallery(Request $req){
-    //$img = $req->image;
-    $query = DB::table('foldergallery')
-    ->join('picture', 'foldergallery.Gallery_name', '=', 'picture.Gallery_name')
-    ->select('foldergallery.*', 'picture.*')
-    ->where('Gallery_id','=',$req->Gallery_id)
-    ->get();
-    // foreach($de as $list){
-        // $idde = $list->Gallery_name;
-
-    //$query2 = DB::table('picture')      ->where('picture_id',$img)->get();
-    //foreach($query2 as $row2){
-    // unlink('C:/xampp/htdocs/webapp/upload00/public/1234/'.$row2->picture_Path);
-    // }
-    foreach($query as $row){
-        // unlink('C:/xampp/htdocs/webapp/upload00/public/'.$row->Gallery_name.'/'.$list->Gallery_name);
-        rmdir("C:/xampp/htdocs/webapp/upload00/public/".$row->Gallery_name);
+    $deletegallery =    DB::table('foldergallery')
+                        ->select('*')
+                        ->where('Gallery_id','=',$req->Gallery_id)
+                        ->get();
+                
+    $deletefile =    DB::table('foldergallery')
+                    ->join('picture', 'foldergallery.Gallery_name', '=', 'picture.Gallery_name')
+                    ->select('picture.*')
+                    ->where('Gallery_id','=',$req->Gallery_id)
+                    ->get();
+  
+    foreach($deletegallery as $gallry){
+        foreach($deletefile as $file ){
+        unlink('C:/xampp/htdocs/webapp/upload00/public/'.$gallry->Gallery_name.'/'.$file ->picture_Path);
+        $deletefiles = DB::table('picture')
+        ->where('picture_id','=',$file->picture_id)
+        ->delete();
+        }
+        rmdir("C:/xampp/htdocs/webapp/upload00/public/".$gallry->Gallery_name);  
     }
-
-    DB::table('foldergallery')->where('Gallery_id','=',$req->Gallery_id)->delete();
+     DB::table('foldergallery')
+    ->where('Gallery_id','=',$req->Gallery_id)
+    ->delete();
     return redirect('show_Gallery');
 }
 //แก้ไขGallery
@@ -357,8 +362,7 @@ public function deletefile(Request $req){
     return redirect('show_File');
 }
 //ค้นหา 2 ตาราง
-public function find_Gallery(Request $req)
-    {
+public function find_Gallery(Request $req){
         $find = $req->find;
         $list = DB::table('foldergallery')
         ->select('*')
@@ -394,8 +398,8 @@ public function download(Request $req){
     foreach($query as $row)
     {
         return response()->download('C:/xampp/htdocs/webapp/upload00/public/'.$row->Gallery_name.'/'.$row->picture_Path);
-    }    
-}
+}    
+}//ดูรูปขนาดเต็ม
 public function view_picture(Request $req){
     $id = $req->picture_id;
     $query = DB::table('picture')

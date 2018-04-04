@@ -131,13 +131,6 @@ Route::get('/list_user_edit/{id}','UsersController@list_user_edit');
 //===========================list_user_update=====================================//
 Route::post('/list_user_update','UsersController@list_user_update');
 
-
-
-
-
-
-
-
 //===========================faculty=====================================//
 
 Route::get('/show_faculty','UsersController@show_faculty');
@@ -145,23 +138,6 @@ Route::post('/show_faculty','UsersController@show_faculty');
 
 
 //========================================================================//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //===================เรียกหน้า=============================================//
 Route::get('/co_main_show', function () {
@@ -283,8 +259,6 @@ Route::get('/co_register', function () {
 Route::get('/co_register', function () {
     return view('page.co_register');
 });
-
-
 //===================show_register=============================================//
 Route::get('/show_register', function () {
     return view('page.show_register');
@@ -331,25 +305,25 @@ Route::get('/ed/{ID}','FileController@ed');
 Route::post('/update1','FileController@update1');
 Route::post('/api/delete','FileController@deleteItem');
 
-//==============================Gallery=============================================//
+//=====================================================Gallery==============================================================//
 Route::get('/Gallery', function () {
-    return view('page.Gallery');
+    return view('page.Gallery');                                                    //เรียกหน้า Gallery
 });
-Route::post('/insertGallery','FileController@insertGallery');//เพิ่มโฟร์เดอร์Gallery
-Route::get('/show_Gallery','FileController@showGallery');//แสดงโฟร์เดอร์
-Route::get('/deleteGallery/{Gallery_id}','FileController@deleteGallery'); //ลบ
-Route::get('/editGallery/{Gallery_id}','FileController@editGallery'); //แก้ไข
-Route::post('/Update_Gallery','FileController@Update_Gallery'); //อัพเดท
-Route::post('/insertFile','FileController@insertFileGallery'); //เพิ่มโฟร์เดอร์
+Route::post('/insertGallery','FileController@insertGallery');                       //เพิ่มโฟร์เดอร์Gallery
+Route::get('/show_Gallery','FileController@showGallery');                           //แสดงโฟร์เดอร์
+Route::get('/deleteGallery/{Gallery_id}','FileController@deleteGallery');           //ลบ
+Route::get('/editGallery/{Gallery_id}','FileController@editGallery');               //แก้ไข
+Route::post('/Update_Gallery','FileController@Update_Gallery');                     //อัพเดท
+Route::post('/insertFile','FileController@insertFileGallery');                      //เพิ่มโฟร์เดอร์
 Route::get('/insertFileGallery/{Gallery_name}','FileController@insertFileGallery'); //เพิ่มรูป
-Route::get('/show_File','FileController@show_File'); //โชว์รูปทั้งหมด
-Route::get('/view_fileGallery/{Gallery_id}','FileController@view_file'); //ดูรูปตามโฟร์เดอร์
-Route::get('/edit_file/{picture_id}','FileController@edit_file'); //แก้ไขไฟล์
-Route::post('/update_file/{picture_id}','FileController@update_file'); //อัพเดท
-Route::get('/deletefile/{picture_id}','FileController@deletefile'); //ลบ
-Route::post('/find_Gallery','FileController@find_Gallery');//ค้นหาโฟร์เดอร์
-Route::post('/find_File','FileController@find_File');//ค้นหาไฟล์
-Route::get('/download/{picture_id}','FileController@download'); //ดาวน์โหลด
-Route::get('/view_picture/{picture_id}','FileController@view_picture'); //ดาวน์โหลด
+Route::get('/show_File','FileController@show_File');                                //โชว์รูปทั้งหมด
+Route::get('/view_fileGallery/{Gallery_id}','FileController@view_file');            //ดูรูปตามโฟร์เดอร์
+Route::get('/edit_file/{picture_id}','FileController@edit_file');                   //แก้ไขไฟล์
+Route::post('/update_file/{picture_id}','FileController@update_file');              //อัพเดท
+Route::get('/deletefile/{picture_id}','FileController@deletefile');                 //ลบ
+Route::post('/find_Gallery','FileController@find_Gallery');                         //ค้นหาโฟร์เดอร์
+Route::post('/find_File','FileController@find_File');                               //ค้นหาไฟล์
+Route::get('/download/{picture_id}','FileController@download');                     //ดาวน์โหลด
+Route::get('/view_picture/{picture_id}','FileController@view_picture');             //ดาวน์โหลด
 
 
